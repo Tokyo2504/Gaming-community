@@ -1,0 +1,25 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  padding-top: 39px;
+  padding-bottom: 56px;
+  width: 100%;
+  color: #fff;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 265px;
+    font-size: 30px;
+    line-height: 30px;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(98.98deg, #8f00ff 2.27%, #fff 193.89%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
