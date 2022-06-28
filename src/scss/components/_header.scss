@@ -14,12 +14,15 @@
   }
 
   &__logo {
-    margin-right: 265px;
     font-size: 30px;
     line-height: 30px;
     -webkit-text-fill-color: transparent;
     background: linear-gradient(98.98deg, #8f00ff 2.27%, #fff 193.89%);
     -webkit-background-clip: text;
     background-clip: text;
+
+    @include small-tablet {
+      font-size: 25px;
+    }
   }
 }

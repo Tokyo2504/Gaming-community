@@ -1,5 +1,10 @@
 .burger {
   @include burger;
 
+  display: none;
   margin-left: auto;
+
+  @include small-tablet {
+    display: block;
+  }
 }

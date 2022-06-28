@@ -1,5 +1,4 @@
 .hero {
-  //padding-top: 309px;
   height: 100vh;
   background-image: linear-gradient(0deg, rgba(#161616, 0.7), rgba(#161616, 0.7)), url("../img/hero-bg.jpg");
   background-position: center;
@@ -7,14 +6,11 @@
   background-repeat: no-repeat;
 
   &__container {
-    @include flex-v-center;
+    @include flex-all-center;
 
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    padding-top: 50px;
+    height: 100vh;
   }
 
   &__title {
@@ -22,6 +18,18 @@
     max-width: 623px;
     font-size: 70px;
     line-height: 70px;
+
+    @include tablet {
+      max-width: 450px;
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    @include mobile {
+      max-width: 320px;
+      font-size: 40px;
+      line-height: 40px;
+    }
   }
 
   &__subtitle {
@@ -32,6 +40,10 @@
     font-size: 20px;
     line-height: 139.5%;
     letter-spacing: -0.04em;
+
+    @include tablet {
+      font-size: 18px;
+    }
   }
 
   &__btns {
@@ -49,7 +61,14 @@
 
     img {
       margin-left: 5px;
+      width: 24px;
+      height: 24px;
       transition: transform 0.5s ease-in-out;
+
+      @include mobile {
+        width: 20px;
+        height: 20px;
+      }
     }
 
     &:hover {
@@ -62,8 +81,20 @@
     &--how {
       font-family: "Josefin Sans", sans-serif;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: -0.04em;
+
+      @include tablet {
+        font-size: 16px;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+
+    @include mobile {
+      padding: 7px 18px;
     }
   }
 }
