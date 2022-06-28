@@ -1,0 +1,236 @@
+.streams {
+  padding-top: 70px;
+  padding-bottom: 100px;
+
+  &__container {
+    @include grid;
+
+    position: relative;
+    grid-template-rows: 562px 345px;
+    background-image: url("../img/streams-bg.jpg");
+    background-position: top 42px center;
+    background-size: 543px 493px;
+    background-repeat: no-repeat;
+    gap: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -650px;
+      bottom: 200px;
+      z-index: -1;
+      display: block;
+      border-radius: 50%;
+      width: 1122px;
+      height: 537px;
+      background: rgba(#ba62ff, 0.1);
+      filter: blur(176px);
+      transform: rotate(20.09deg);
+    }
+
+    @include tablet {
+      background-position: top 28px center;
+      background-size: 470px 420px;
+    }
+
+    @include small-tablet {
+      background-size: 440px 390px;
+    }
+
+    @include mobile {
+      grid-template-rows: 400px repeat(2, auto);
+      background-position: top center;
+      background-size: 443px 393px;
+      row-gap: 15px;
+    }
+  }
+
+  &__left {
+    grid-column: 2 / 5 span;
+    grid-row: 2;
+    margin-top: -200px;
+    padding-left: 58px;
+
+    @include tablet {
+      margin-top: -240px;
+      padding-left: 40px;
+    }
+
+    @include small-tablet {
+      grid-column: 12 span;
+      margin-top: -70px;
+      padding-left: 15px;
+
+      @include mobile {
+        margin: 0 auto;
+        margin-top: -35px;
+        padding-left: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &__right {
+    grid-column: 8 / 5 span;
+    padding-left: 50px;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      grid-column: 12 span;
+      grid-row: 3;
+      margin: 0 auto;
+      padding-top: 40px;
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    margin-top: 35px;
+    padding-left: 95px;
+
+    @include tablet {
+      padding-left: 72px;
+    }
+
+    @include small-tablet {
+      padding-left: 75px;
+    }
+
+    @include mobile {
+      @include flex-h-center;
+
+      margin-top: 10px;
+      padding-left: 0;
+    }
+  }
+
+  &__item {
+    @include flex-all-center;
+    @include mb(30px);
+
+    border-radius: 50%;
+    width: 74px;
+    height: 74px;
+    background: radial-gradient(50% 50% at 50% 50%, #ba62ff 0%, #8f00ff 100%);
+    filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    @include tablet {
+      @include mb(25px);
+
+      width: 70px;
+      height: 70px;
+    }
+
+    @include mobile {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include mobile {
+      @include mb(0);
+      @include mr(20px);
+    }
+  }
+
+  &__links {
+    @include flex-all-center;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    color: inherit;
+    fill: currentcolor;
+
+    @include tablet {
+      width: 36px;
+      height: 36px;
+    }
+
+    @include mobile {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+
+    @include tablet {
+      max-width: 300px;
+      font-size: 55px;
+    }
+
+    @include small-tablet {
+      width: 100%;
+      max-width: none;
+      font-size: 45px;
+    }
+
+    @include mobile {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    max-width: 373px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 139.5%;
+    letter-spacing: -0.04em;
+    color: $text;
+
+    @include tablet {
+      font-size: 17px;
+    }
+  }
+
+  &__link {
+    @include flex-v-center;
+
+    display: inline-block;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+    color: $color-white;
+    transition: color 0.3s ease-in-out;
+
+    svg {
+      margin-left: 9px;
+      width: 28px;
+      height: 14px;
+      fill: #ba62ff;
+      transition: transform 0.3s ease-in-out;
+
+      @include tablet {
+        width: 26px;
+        height: 12px;
+      }
+    }
+
+    &:hover {
+      color: #ba62ff;
+      transition: color 0.3s ease-in-out;
+
+      svg {
+        transform: translateX(5px);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+}
