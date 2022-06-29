@@ -1,0 +1,94 @@
+.games {
+  padding-top: 170px;
+  padding-bottom: 100px;
+
+
+  &__title {
+    margin-bottom: 78px;
+  }
+
+  &__slider,
+  &__slider1 {
+    @include mb(50px);
+
+    position: relative;
+    margin: 0 auto;
+    max-width: 732px;
+
+    @include small-tablet {
+      max-width: 351px;
+    }
+  }
+
+  &__slide {
+    overflow: hidden;
+    border-radius: 20px;
+    width: 351px;
+    min-height: 415px;
+    user-select: none;
+  }
+
+  &__content {
+    overflow: hidden;
+    border-radius: 20px;
+    width: 351px;
+    min-height: 415px;
+  }
+
+  &__img {
+    width: 351px;
+    min-height: 415px;
+
+    img {
+      min-height: inherit;
+    }
+  }
+
+  &__title {
+    @include small-tablet {
+      font-size: 50px;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 22px 23px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(#fff, 0.1);
+    backdrop-filter: blur(20px);
+  }
+
+  &__stream {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+    color: $text;
+
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 11px;
+      height: 11px;
+      background: #00ff85;
+    }
+
+    &--no-stream {
+      &::after {
+        background: #ff0000;
+      }
+    }
+  }
+}
