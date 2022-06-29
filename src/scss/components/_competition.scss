@@ -11,6 +11,10 @@
     flex-direction: column;
     height: 100vh;
     text-align: center;
+
+    @include mobile {
+      height: 400px;
+    }
   }
 
   &__title {
@@ -26,5 +30,9 @@
     @include mobile {
       font-size: 40px;
     }
+  }
+
+  @include mobile {
+    height: 400px;
   }
 }
