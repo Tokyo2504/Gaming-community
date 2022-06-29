@@ -846,7 +846,7 @@ a {
 }
 @media (max-width: 576px) {
   .competition__container {
-    height: 400px;
+    height: 350px;
   }
 }
 .competition__title {
@@ -867,7 +867,7 @@ a {
 }
 @media (max-width: 576px) {
   .competition {
-    height: 400px;
+    height: 350%;
   }
 }
 

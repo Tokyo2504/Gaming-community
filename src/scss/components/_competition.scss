@@ -13,7 +13,7 @@
     text-align: center;
 
     @include mobile {
-      height: 400px;
+      height: 350px;
     }
   }
 
@@ -33,6 +33,6 @@
   }
 
   @include mobile {
-    height: 400px;
+    height: 350%;
   }
 }
