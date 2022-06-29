@@ -811,6 +811,12 @@ a {
     font-size: 18px;
   }
 }
+@media (max-width: 576px) {
+  .streams {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
 
 .competition {
   height: 100vh;
@@ -838,6 +844,11 @@ a {
   height: 100vh;
   text-align: center;
 }
+@media (max-width: 576px) {
+  .competition__container {
+    height: 400px;
+  }
+}
 .competition__title {
   margin-bottom: 60px;
   max-width: 749px;
@@ -852,6 +863,11 @@ a {
 @media (max-width: 576px) {
   .competition__title {
     font-size: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .competition {
+    height: 400px;
   }
 }
 
