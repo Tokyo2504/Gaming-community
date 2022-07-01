@@ -138,28 +138,22 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay]);
 const gamesSlider = document.querySelector('.games__slider');
-const gamesSlider1 = document.querySelector('.games__slider1');
 let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](gamesSlider, {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  grabCursor: true,
-  breakpoints: {
-    768: {
-      slidesPerView: 2
-    }
-  }
-});
-let slider1 = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](gamesSlider1, {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  grabCursor: true,
-  initialSlide: 4,
-  breakpoints: {
-    768: {
-      slidesPerView: 2
-    }
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  autoplay: {
+    delay: 3000
+  },
+  navigation: {
+    nextEl: '.games-button-next',
+    prevEl: '.games-button-prev'
+  },
+  pagination: {
+    el: '.games__pag',
+    type: 'bullets',
+    clickable: true
   }
 });
 
