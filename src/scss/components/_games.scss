@@ -1,56 +1,67 @@
 .games {
+  position: relative;
   padding-top: 170px;
   padding-bottom: 100px;
 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 200px;
+    bottom: 10px;
+    z-index: -1;
+    display: block;
+    border-radius: 50%;
+    width: 325px;
+    height: 325px;
+    background: linear-gradient(133.74deg, #8F00FF 17.23%, #BA62FF 93.42%);
+    filter: blur(176px);
+  }
+
+  &__container {
+    //overflow: hidden;
+    max-width: 100%;
+  }
 
   &__title {
     margin-bottom: 78px;
-  }
 
-  &__slider,
-  &__slider1 {
-    @include mb(50px);
-
-    position: relative;
-    margin: 0 auto;
-    max-width: 732px;
-
-    @include small-tablet {
-      max-width: 351px;
-    }
-  }
-
-  &__slide {
-    overflow: hidden;
-    border-radius: 20px;
-    width: 351px;
-    min-height: 415px;
-    user-select: none;
-  }
-
-  &__content {
-    overflow: hidden;
-    border-radius: 20px;
-    width: 351px;
-    min-height: 415px;
-  }
-
-  &__img {
-    width: 351px;
-    min-height: 415px;
-
-    img {
-      min-height: inherit;
-    }
-  }
-
-  &__title {
-    @include small-tablet {
+    @include tablet {
       font-size: 50px;
     }
 
     @include mobile {
       font-size: 40px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__slide {
+    overflow: hidden;
+    border-radius: 20px;
+    max-width: 351px;
+    height: 415px;
+    transition: opacity 0.3s ease-in-out;
+    user-select: none;
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+        transition: transform 0.8s ease-in-out;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 351px;
+    min-height: 415px;
+
+    img {
+      min-height: inherit;
+      transition: transform 0.8s ease-in-out;
     }
   }
 
@@ -91,4 +102,52 @@
       }
     }
   }
+
+  &__pag {
+    .swiper-pagination-bullet {
+      @include mr(15px);
+
+      border-radius: 0;
+      width: 10px;
+      height: 10px;
+      background: rgba(#fff, 0.8);
+
+      &-active {
+        background: #8f00ff;
+      }
+    }
+  }
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -40px;
+  z-index: 10;
+}
+
+.games-button-next,
+.games-button-prev {
+  position: absolute;
+  top: -50px;
+  z-index: 5;
+  color: #8f00ff;
+  cursor: pointer;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: inherit;
+    fill: currentcolor;
+  }
+}
+
+.games-button-next {
+
+  margin-left: 50px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
 }

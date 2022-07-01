@@ -193,6 +193,10 @@ a {
   background: linear-gradient(98.98deg, #8f00ff 2.27%, #fff 193.89%);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 @media (max-width: 768px) {
   .header__logo {
@@ -320,6 +324,11 @@ a {
   box-shadow: 0 5px 27px 7px rgba(143, 0, 255, 0.2);
   background-image: -o-linear-gradient(352.84deg, #8f00ff 9.79%, #fff 236.98%);
   background-image: linear-gradient(97.16deg, #8f00ff 9.79%, #fff 236.98%);
+  -webkit-transition: -webkit-box-shadow 0.5s ease-in-out;
+  transition: -webkit-box-shadow 0.5s ease-in-out;
+  -o-transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
 }
 .btn--fill::after {
   content: "";
@@ -342,19 +351,34 @@ a {
   -o-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
+.btn--fill:hover {
+  -webkit-box-shadow: 0 5px 30px 10px rgba(143, 0, 255, 0.6);
+  box-shadow: 0 5px 30px 10px rgba(143, 0, 255, 0.6);
+  -webkit-transition: -webkit-box-shadow 0.5s ease-in-out;
+  transition: -webkit-box-shadow 0.5s ease-in-out;
+  -o-transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
+}
 .btn--stroke {
   border: 2px solid #8f00ff;
   -webkit-box-shadow: 0 5px 27px 7px rgba(143, 0, 255, 0.2);
   box-shadow: 0 5px 27px 7px rgba(143, 0, 255, 0.2);
-  -webkit-transition: color 0.5s ease-in-out;
-  -o-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
 }
 .btn--stroke:hover {
+  -webkit-box-shadow: 0 5px 30px 10px rgba(143, 0, 255, 0.6);
+  box-shadow: 0 5px 30px 10px rgba(143, 0, 255, 0.6);
   color: #8f00ff;
-  -webkit-transition: color 0.5s ease-in-out;
-  -o-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
 }
 @media (max-width: 1024px) {
   .btn {
@@ -872,49 +896,32 @@ a {
 }
 
 .games {
+  position: relative;
   padding-top: 170px;
   padding-bottom: 100px;
+}
+.games::before {
+  content: "";
+  position: absolute;
+  left: 200px;
+  bottom: 10px;
+  z-index: -1;
+  display: block;
+  border-radius: 50%;
+  width: 325px;
+  height: 325px;
+  background: -o-linear-gradient(316.26deg, #8F00FF 17.23%, #BA62FF 93.42%);
+  background: linear-gradient(133.74deg, #8F00FF 17.23%, #BA62FF 93.42%);
+  -webkit-filter: blur(176px);
+  filter: blur(176px);
+}
+.games__container {
+  max-width: 100%;
 }
 .games__title {
   margin-bottom: 78px;
 }
-.games__slider, .games__slider1 {
-  position: relative;
-  margin: 0 auto;
-  max-width: 732px;
-}
-.games__slider:not(:last-child), .games__slider1:not(:last-child) {
-  margin-bottom: 50px;
-}
-@media (max-width: 768px) {
-  .games__slider, .games__slider1 {
-    max-width: 351px;
-  }
-}
-.games__slide {
-  overflow: hidden;
-  border-radius: 20px;
-  width: 351px;
-  min-height: 415px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.games__content {
-  overflow: hidden;
-  border-radius: 20px;
-  width: 351px;
-  min-height: 415px;
-}
-.games__img {
-  width: 351px;
-  min-height: 415px;
-}
-.games__img img {
-  min-height: inherit;
-}
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .games__title {
     font-size: 50px;
   }
@@ -923,6 +930,45 @@ a {
   .games__title {
     font-size: 40px;
   }
+}
+.games__slider {
+  position: relative;
+  margin: 0 auto;
+}
+.games__slide {
+  overflow: hidden;
+  border-radius: 20px;
+  max-width: 351px;
+  height: 415px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.games__slide:hover img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: -webkit-transform 0.8s ease-in-out;
+  -o-transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+}
+.games__img {
+  max-width: 351px;
+  min-height: 415px;
+}
+.games__img img {
+  min-height: inherit;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: -webkit-transform 0.8s ease-in-out;
+  -o-transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
 }
 .games__info {
   position: absolute;
@@ -963,6 +1009,50 @@ a {
 }
 .games__stream--no-stream::after {
   background: #ff0000;
+}
+.games__pag .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.games__pag .swiper-pagination-bullet:not(:last-child) {
+  margin-right: 15px;
+}
+.games__pag .swiper-pagination-bullet-active {
+  background: #8f00ff;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -40px;
+  z-index: 10;
+}
+
+.games-button-next,
+.games-button-prev {
+  position: absolute;
+  top: -50px;
+  z-index: 5;
+  color: #8f00ff;
+  cursor: pointer;
+}
+.games-button-next svg,
+.games-button-prev svg {
+  width: 30px;
+  height: 30px;
+  color: inherit;
+  fill: currentcolor;
+}
+
+.games-button-next {
+  margin-left: 50px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
 }
 
 .burger {
