@@ -6,7 +6,7 @@
     @include grid;
 
     position: relative;
-    grid-template-rows: 562px 345px;
+    grid-template-rows: 562px auto;
     background-image: url("../img/streams-bg.jpg");
     background-position: top 42px center;
     background-size: 543px 493px;
@@ -34,7 +34,9 @@
     }
 
     @include small-tablet {
+      grid-template-rows: 400px 300px;
       background-size: 440px 390px;
+      row-gap: 50px;
     }
 
     @include mobile {
@@ -58,15 +60,15 @@
 
     @include small-tablet {
       grid-column: 12 span;
-      margin-top: -70px;
+      margin-top: 0;
       padding-left: 15px;
+    }
 
-      @include mobile {
-        margin: 0 auto;
-        margin-top: -35px;
-        padding-left: 0;
-        text-align: center;
-      }
+    @include mobile {
+      margin: 0 auto;
+      margin-top: -35px;
+      padding-left: 0;
+      text-align: center;
     }
   }
 
@@ -113,7 +115,7 @@
     border-radius: 50%;
     width: 74px;
     height: 74px;
-    background: radial-gradient(50% 50% at 50% 50%, #ba62ff 0%, #8f00ff 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #ba62ff 0%, $color-violet 100%);
     filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
     transition: transform 0.3s ease-in-out;
 
@@ -142,6 +144,12 @@
 
   &__links {
     @include flex-all-center;
+
+    &:focus {
+      outline: 2px solid $color-white;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
   }
 
   &__icon {
@@ -219,6 +227,12 @@
       }
     }
 
+    &:focus {
+      outline: 2px solid $color-violet;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
     &:hover {
       color: #ba62ff;
       transition: color 0.3s ease-in-out;
@@ -234,8 +248,11 @@
     }
   }
 
-  @include mobile {
+  @include small-tablet {
     padding-top: 20px;
-    padding-bottom: 50px;
+  }
+
+  @include mobile {
+    padding-bottom: 40px;
   }
 }

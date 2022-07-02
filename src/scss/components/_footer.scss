@@ -1,0 +1,61 @@
+.footer {
+  border-top: 1px solid #000;
+  padding-top: 42px;
+  padding-bottom: 43px;
+
+  &__container {
+    @include flex-all-sb;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      outline: 2px solid $color-violet;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      color: $color-violet;
+      transition: color 0.3s ease-in-out;
+    }
+  }
+
+  &__link,
+  &__copy {
+    @include mr(42px);
+
+    font-size: 18px;
+    line-height: 139.5%;
+    letter-spacing: -0.04em;
+    color: $color-gray;
+
+    span {
+      color: $color-white;
+    }
+
+    @include small-tablet {
+      @include mr(30px);
+
+      font-size: 15px;
+    }
+  }
+
+  @include mobile {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

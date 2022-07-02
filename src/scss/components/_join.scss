@@ -1,0 +1,43 @@
+.join {
+  height: 100vh;
+  background-image: $gradient, url("../img/join-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    @include flex-all-center;
+
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+
+    @include small-tablet {
+      height: 350px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    max-width: 880px;
+
+    @include tablet-landscape {
+      margin-bottom: 30px;
+      font-size: 50px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 30px;
+      max-width: 500px;
+      font-size: 50px;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  @include small-tablet {
+    height: 350px;
+  }
+}

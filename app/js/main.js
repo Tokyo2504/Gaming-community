@@ -10,6 +10,9 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_games_swipper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/games-swipper */ "./src/js/components/games-swipper.js");
+/* harmony import */ var _components_video__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/video */ "./src/js/components/video.js");
+/* harmony import */ var _components_video__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_video__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /***/ }),
@@ -156,6 +159,36 @@ let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](gamesSlider, {
     clickable: true
   }
 });
+
+/***/ }),
+
+/***/ "./src/js/components/video.js":
+/*!************************************!*\
+  !*** ./src/js/components/video.js ***!
+  \************************************/
+/***/ (() => {
+
+const videoBlock = document.querySelector('.video-block');
+const video = videoBlock.querySelector('video');
+const playBtn = videoBlock.querySelector('.video-block__play');
+const watchTitle = document.querySelector('.watch__title');
+playBtn.addEventListener('click', () => {
+  videoBlock.classList.add('video-block--played');
+  video.play();
+  video.controls = true;
+  playBtn.classList.add('video-block__play--played');
+  watchTitle.classList.add('watch__title--hidden');
+});
+video.addEventListener('ended', function () {
+  this.src = this.src;
+});
+
+video.onpause = function () {
+  videoBlock.classList.remove('video-block--played');
+  video.controls = false;
+  playBtn.classList.remove('video-block__play--played');
+  watchTitle.classList.remove('watch__title--hidden');
+};
 
 /***/ }),
 

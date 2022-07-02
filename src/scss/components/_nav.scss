@@ -19,6 +19,10 @@
       @include mr (0);
       @include mb (35px);
     }
+
+    @include tablet-landscape {
+      @include mr(30px);
+    }
   }
 
   &__link {
@@ -27,8 +31,14 @@
     color: $color-gray;
     transition: color 0.3s ease-in-out;
 
+    &:focus {
+      outline: 2px solid $color-violet;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
     &:hover {
-      color: $color-white;
+      color: $color-violet;
       transition: color 0.3s ease-in-out;
     }
 
@@ -54,7 +64,7 @@
     overflow-y: auto;
     width: 100%;
     height: 100vh;
-    background-color: rgba(#8f00ff, 0.5);
+    background-color: rgba($color-violet, 0.5);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;

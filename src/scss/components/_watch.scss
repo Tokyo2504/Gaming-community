@@ -1,0 +1,48 @@
+.watch {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 21px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 35px;
+    bottom: -63px;
+    z-index: 1;
+    display: block;
+    border-radius: 50%;
+    width: 325px;
+    height: 325px;
+    background: linear-gradient(133.74deg, $color-violet 17.23%, #ba62ff 93.42%);
+    filter: blur(176px);
+  }
+
+  &__container {
+    max-width: 785px;
+  }
+
+  &__title {
+    position: relative;
+    left: -17px;
+    z-index: 10;
+    padding-left: 5px;
+    max-width: 615px;
+
+    &--hidden {
+      z-index: 5;
+    }
+
+    @include small-tablet {
+      font-size: 60px;
+    }
+
+    @include mobile {
+      max-width: 300px;
+      font-size: 40px;
+    }
+  }
+
+  @include small-tablet {
+    padding-top: 100px;
+  }
+}

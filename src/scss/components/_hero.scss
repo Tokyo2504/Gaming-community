@@ -30,6 +30,12 @@
       font-size: 40px;
       line-height: 40px;
     }
+
+    @include tablet-landscape {
+      margin-bottom: 10px;
+      font-size: 35px;
+      line-height: 40px;
+    }
   }
 
   &__subtitle {
@@ -45,6 +51,10 @@
     @include tablet {
       font-size: 18px;
     }
+
+    @include tablet-landscape {
+      font-size: 16px;
+    }
   }
 
   &__btns {
@@ -52,13 +62,10 @@
   }
 
   &__btn {
+    @include flex-v-center;
     @include mr(26px);
 
     padding: 9px 22px;
-
-    span {
-      @include flex-v-center;
-    }
 
     img {
       margin-left: 5px;
@@ -67,6 +74,11 @@
       transition: transform 0.5s ease-in-out;
 
       @include mobile {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include tablet-landscape {
         width: 20px;
         height: 20px;
       }
@@ -80,13 +92,16 @@
     }
 
     &--how {
-      font-family: "Josefin Sans", sans-serif;
-      font-weight: 700;
+      padding: 7px 18px;
       font-size: 18px;
       letter-spacing: -0.04em;
 
       @include tablet {
         font-size: 16px;
+      }
+
+      @include tablet-landscape {
+        font-size: 15px;
       }
 
       @include mobile {

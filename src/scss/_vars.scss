@@ -14,7 +14,8 @@ $bg: #101010;
 $text: #dad7d7;
 $color-white: #fff;
 $color-gray: #9f9f9f;
+$color-violet: #8f00ff;
 
 // bachground
 $gradient: linear-gradient(0deg, rgba(#101010, 1), rgba(#101010, 0.7), rgba(#101010, 0.6), rgba(#101010, 1));
-$primaryGradient: linear-gradient(97.16deg, #8f00ff 9.79%, #fff 236.98%);
+$primaryGradient: linear-gradient(97.16deg, $color-violet 9.79%, #fff 236.98%);

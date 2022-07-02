@@ -13,12 +13,11 @@
     border-radius: 50%;
     width: 325px;
     height: 325px;
-    background: linear-gradient(133.74deg, #8F00FF 17.23%, #BA62FF 93.42%);
+    background: linear-gradient(133.74deg, $color-violet 17.23%, #ba62ff 93.42%);
     filter: blur(176px);
   }
 
   &__container {
-    //overflow: hidden;
     max-width: 100%;
   }
 
@@ -42,8 +41,8 @@
   &__slide {
     overflow: hidden;
     border-radius: 20px;
-    max-width: 351px;
     height: 415px;
+    max-width: 351px;
     transition: opacity 0.3s ease-in-out;
     user-select: none;
 
@@ -56,8 +55,8 @@
   }
 
   &__img {
-    max-width: 351px;
     min-height: 415px;
+    max-width: 351px;
 
     img {
       min-height: inherit;
@@ -98,7 +97,7 @@
 
     &--no-stream {
       &::after {
-        background: #ff0000;
+        background-color: #ff0000;
       }
     }
   }
@@ -113,9 +112,14 @@
       background: rgba(#fff, 0.8);
 
       &-active {
-        background: #8f00ff;
+        background: $color-violet;
       }
     }
+  }
+
+  @include small-tablet {
+    padding-top: 80px;
+    padding-bottom: 50px;
   }
 }
 
@@ -125,6 +129,7 @@
 .swiper-pagination-fraction {
   bottom: -40px;
   z-index: 10;
+  outline: none;
 }
 
 .games-button-next,
@@ -132,7 +137,7 @@
   position: absolute;
   top: -50px;
   z-index: 5;
-  color: #8f00ff;
+  color: $color-violet;
   cursor: pointer;
 
   svg {
@@ -144,7 +149,6 @@
 }
 
 .games-button-next {
-
   margin-left: 50px;
 }
 
